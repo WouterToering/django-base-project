@@ -18,8 +18,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    'suit',
-    'suit_redactor',
     'mptt',
 
     'django.contrib.admin',
@@ -29,8 +27,6 @@ INSTALLED_APPS = (
     'django_extensions',
 
     'apps.main',
-    'apps.menus',
-    'apps.articles'
 )
 
 
@@ -100,9 +96,3 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-
-# import choices/constants
-from settings._choices import *
-
-# import django-suit configuration
-from settings._suit import *

@@ -1,16 +1,10 @@
 bpython
 
 django==1.11
-django-extensions
 django-mptt
+django-extensions
 djangorestframework
-django-suit
-django-suit-redactor
 
 fabric3
-
-mysqlclient
-
-pillow
 
 werkzeug

@@ -6,16 +6,8 @@ SECRET_KEY = 'development-nonsense-key'
 
 
 DATABASE_DEFAULT = {
-    'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'development',
-    'USER': 'development',
-    'PASSWORD': 'development',
-
-    'HOST': '127.0.0.1',
-    'PORT': '3306',
-    'OPTIONS': {
-        'init_command': "SET sql_mode='STRICT_ALL_TABLES'"
-    }
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': 'development'
 }
 
 DATABASES = {
