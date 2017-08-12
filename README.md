@@ -1,7 +1,9 @@
 # django-base-project
-
 A base "scaffold" for a new Django (REST) project that some people - but mostly myself - find very handy.
 It's now Python 3 only.
+
+### Quickstart
+Run `./install.py {PATH}`
 
 ### Features
 This heavily resembles my favourite workflow and tools, so some things will differ from 'normal' Django projects.
