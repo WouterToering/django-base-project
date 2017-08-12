@@ -7,7 +7,7 @@ SECRET_KEY = 'development-nonsense-key'
 
 DATABASE_DEFAULT = {
     'ENGINE': 'django.db.backends.sqlite3',
-    'NAME': 'development'
+    'NAME': 'development.sqlite3'
 }
 
 DATABASES = {

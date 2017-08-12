@@ -7,3 +7,5 @@ environment
 /media/*
 
 .env/*
+
+*.sqlite3
