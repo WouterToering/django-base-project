@@ -12,13 +12,36 @@ It contains:
 - a 'settings' package/directory. Base settings are in settings/__init__.py, and can be overridden/expanded in environment-based settings-files, for example settings/development.py. An environment-file containing the name of the environment is expected. See 'getting started' below. I guess it's a bit like `https://code.djangoproject.com/wiki/SplitSettings#SimplePackageOrganizationforEnvironments`, but simpler.
 - a 'main' app, containing useful model-mixins and a default viewset;
 - an admin list-display for the internal django admin-log (extended Latest Actions stuff);
-
-- basic fabric commands for local development (`fab run`!), see fabfile.py;
+- django-rest-camel for DRF renderers/parsers; automatic camelcase to snake-case (and vice-versa) conversion;
+- JSON webtoken authentication (using djangorestframework-jwt);
+- basic invoke commands for local development (`inv run`!), see tasks.py;
 
 
 ### Requirements/dependencies
-My base tools, including django-extensions, pip-tools, bpython, fabric3, etc;
-Check out https://github.com/nvie/pip-tools if you're unfamiliar with pip-tools. Then have a look at requirements.in for base requirements.
-The default development settings contain sqlite3-settings. Change to your liking.
+Base tools, including django-extensions, django-suit, pip-tools, bpython, invoke, etc;
+Check out https://github.com/jazzband/pip-tools if you're unfamiliar with pip-tools. Then have a look at requirements.in for base requirements.
+The default development settings contain slite3-settings. Change to your liking.
 
 - runserver_plus for development, gunicorn for staging/production;
+
+
+### Getting started
+- Create a new virtualenv with Python3: `$ virtualenv --python=python3 <env-name>`;
+- Install pip-tools and invoke: `$ pip install pip-tools invoke`;
+- Clone/download/archive this repository and cd into it;
+- Create your environment file, for instance 'development': `$ echo "development" > environment`;
+- Edit the corresponding settings/development to your liking (database-settings, etc...);
+- Install base requirements: `$ inv pip`;
+- run `$ inv migrate`;
+
+
+### Notes
+- If installing Pillow fails (jpeg required), see https://stackoverflow.com/a/34631976
+- Django-suit problems: django-suit-redactor is old! I can't add the latest version of Redactor (10.2.2) because of licensing.
+    - Get your own version (http://imperavi.com/redactor) and put its files in apps/articles/static/suit-redactor/;
+    - Remove django-suit-redactor from installed-apps.
+
+
+### TODO
+- Menus app tests
+- Replace djang-suit-redactor
