@@ -26,10 +26,10 @@ if __name__ == "__main__":
         'virtualenv -ppython3 .env',
         'source .env/bin/activate',
         'pip install --upgrade pip',
-        'pip install pip-tools fabric3',
+        'pip install pip-tools invoke',
         'echo "development" > environment',
-        'fab pip',
-        './manage.py migrate',
+        'inv pip',
+        'inv migrate',
         'git init',
         'git add .',
         'git commit -m "Add auto generated base"'
